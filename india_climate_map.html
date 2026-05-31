@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_cf6cc5e8fb99d0e0fc4cf6926a0ed21d {
+                #map_5bef55da8b9535faf10479408e2f97cc {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,22 +35,30 @@
                 .leaflet-container { font-size: 1rem; }
             </style>
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_cf6cc5e8fb99d0e0fc4cf6926a0ed21d" ></div>
+             <h3 align="center" style="font-family: Arial, sans-serif; font-size:20px; font-weight:bold; margin-top: 20px;">
+             <b>Gujarat Rainfall Monitoring Stations</b>
+             </h3>
+             
+    
+            <div class="folium-map" id="map_5bef55da8b9535faf10479408e2f97cc" ></div>
         
 </body>
 <script>
     
     
-            var map_cf6cc5e8fb99d0e0fc4cf6926a0ed21d = L.map(
-                "map_cf6cc5e8fb99d0e0fc4cf6926a0ed21d",
+            var map_5bef55da8b9535faf10479408e2f97cc = L.map(
+                "map_5bef55da8b9535faf10479408e2f97cc",
                 {
-                    center: [23.0, 72.5],
+                    center: [22.2587, 71.1924],
                     crs: L.CRS.EPSG3857,
-                    zoom: 6,
+                    zoom: 7,
                     zoomControl: true,
                     preferCanvas: false,
                 }
@@ -60,42 +68,182 @@
 
         
     
-            var tile_layer_2f1211594d5951a2e4983208d1dc2182 = L.tileLayer(
-                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            var tile_layer_5ba5509fef73d1796edec0cfa84882ec = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
             );
         
     
-            tile_layer_2f1211594d5951a2e4983208d1dc2182.addTo(map_cf6cc5e8fb99d0e0fc4cf6926a0ed21d);
+            tile_layer_5ba5509fef73d1796edec0cfa84882ec.addTo(map_5bef55da8b9535faf10479408e2f97cc);
         
     
-            var marker_f13f63d90ca9b5f5d1bcbdb4ca268339 = L.marker(
-                [23.0, 72.5],
+            var marker_cluster_e3ff39537c9f7780aed5ba85286dada7 = L.markerClusterGroup(
                 {}
-            ).addTo(map_cf6cc5e8fb99d0e0fc4cf6926a0ed21d);
+            );
         
     
-        var popup_e722fa7446d4f1a70e8325ff49baeef4 = L.popup({"maxWidth": "100%"});
+            var circle_marker_54027ff13a655a85c430ff0fbf0da6a5 = L.circleMarker(
+                [23.0225, 72.5714],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_e3ff39537c9f7780aed5ba85286dada7);
+        
+    
+        var popup_7e33d4c7f4e28ece450f9093ca7918e4 = L.popup({"maxWidth": 250});
 
         
             
-                var html_4cd48c4fc4a737cf9b1986577c72740a = $(`<div id="html_4cd48c4fc4a737cf9b1986577c72740a" style="width: 100.0%; height: 100.0%;">Gujarat Rainfall Station</div>`)[0];
-                popup_e722fa7446d4f1a70e8325ff49baeef4.setContent(html_4cd48c4fc4a737cf9b1986577c72740a);
+                var html_3ec9c7cdc7f8773aefbaf50a7cedcbb6 = $(`<div id="html_3ec9c7cdc7f8773aefbaf50a7cedcbb6" style="width: 100.0%; height: 100.0%;">         <div style="width: 200px; font-family: Arial, sans-serif;">             <h4 style="margin-bottom: 5px; color: #2c3e50;">Ahmedabad Station</h4>             <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">             <p style="margin: 5px 0; font-size: 13px;"><b>Coordinates:</b> 23.02, 72.57</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Annual Rainfall:</b> 800 mm</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Status:</b> <span style="color: #27ae60; font-weight: bold;">Active</span></p>         </div>         </div>`)[0];
+                popup_7e33d4c7f4e28ece450f9093ca7918e4.setContent(html_3ec9c7cdc7f8773aefbaf50a7cedcbb6);
             
         
 
-        marker_f13f63d90ca9b5f5d1bcbdb4ca268339.bindPopup(popup_e722fa7446d4f1a70e8325ff49baeef4)
+        circle_marker_54027ff13a655a85c430ff0fbf0da6a5.bindPopup(popup_7e33d4c7f4e28ece450f9093ca7918e4)
         ;
 
         
     
     
-            marker_f13f63d90ca9b5f5d1bcbdb4ca268339.bindTooltip(
+            circle_marker_54027ff13a655a85c430ff0fbf0da6a5.bindTooltip(
                 `<div>
-                     Click for info
+                     Ahmedabad - Click for details
                  </div>`,
                 {"sticky": true}
             );
+        
+    
+            var circle_marker_6aa2fd11ad105ad419d47fc691d9e226 = L.circleMarker(
+                [21.1702, 72.8311],
+                {"bubblingMouseEvents": true, "color": "#2980b9", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2980b9", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_e3ff39537c9f7780aed5ba85286dada7);
+        
+    
+        var popup_1b52a17ba4fb11427aa7382ede47cc4a = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_622b54f1867aeb70f2a162b86cc24b7e = $(`<div id="html_622b54f1867aeb70f2a162b86cc24b7e" style="width: 100.0%; height: 100.0%;">         <div style="width: 200px; font-family: Arial, sans-serif;">             <h4 style="margin-bottom: 5px; color: #2c3e50;">Surat Station</h4>             <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">             <p style="margin: 5px 0; font-size: 13px;"><b>Coordinates:</b> 21.17, 72.83</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Annual Rainfall:</b> 1200 mm</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Status:</b> <span style="color: #27ae60; font-weight: bold;">Active</span></p>         </div>         </div>`)[0];
+                popup_1b52a17ba4fb11427aa7382ede47cc4a.setContent(html_622b54f1867aeb70f2a162b86cc24b7e);
+            
+        
+
+        circle_marker_6aa2fd11ad105ad419d47fc691d9e226.bindPopup(popup_1b52a17ba4fb11427aa7382ede47cc4a)
+        ;
+
+        
+    
+    
+            circle_marker_6aa2fd11ad105ad419d47fc691d9e226.bindTooltip(
+                `<div>
+                     Surat - Click for details
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_186741df73f8bf1d29ed9d1af520314b = L.circleMarker(
+                [22.3072, 73.1812],
+                {"bubblingMouseEvents": true, "color": "#27ae60", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#27ae60", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_e3ff39537c9f7780aed5ba85286dada7);
+        
+    
+        var popup_49aad76e9cbc49aa73a50f0483c0668f = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_0af3e507c73b30d20918f11fed703bb5 = $(`<div id="html_0af3e507c73b30d20918f11fed703bb5" style="width: 100.0%; height: 100.0%;">         <div style="width: 200px; font-family: Arial, sans-serif;">             <h4 style="margin-bottom: 5px; color: #2c3e50;">Vadodara Station</h4>             <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">             <p style="margin: 5px 0; font-size: 13px;"><b>Coordinates:</b> 22.31, 73.18</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Annual Rainfall:</b> 900 mm</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Status:</b> <span style="color: #27ae60; font-weight: bold;">Active</span></p>         </div>         </div>`)[0];
+                popup_49aad76e9cbc49aa73a50f0483c0668f.setContent(html_0af3e507c73b30d20918f11fed703bb5);
+            
+        
+
+        circle_marker_186741df73f8bf1d29ed9d1af520314b.bindPopup(popup_49aad76e9cbc49aa73a50f0483c0668f)
+        ;
+
+        
+    
+    
+            circle_marker_186741df73f8bf1d29ed9d1af520314b.bindTooltip(
+                `<div>
+                     Vadodara - Click for details
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_03c394d2deb06322b7492a5f61074ffd = L.circleMarker(
+                [22.3039, 70.8022],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_e3ff39537c9f7780aed5ba85286dada7);
+        
+    
+        var popup_4dbfab8599bd9dc7a878bbf9280a835e = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_ace7dcaefc78d72a5fe341122c06091f = $(`<div id="html_ace7dcaefc78d72a5fe341122c06091f" style="width: 100.0%; height: 100.0%;">         <div style="width: 200px; font-family: Arial, sans-serif;">             <h4 style="margin-bottom: 5px; color: #2c3e50;">Rajkot Station</h4>             <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">             <p style="margin: 5px 0; font-size: 13px;"><b>Coordinates:</b> 22.30, 70.80</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Annual Rainfall:</b> 600 mm</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Status:</b> <span style="color: #27ae60; font-weight: bold;">Active</span></p>         </div>         </div>`)[0];
+                popup_4dbfab8599bd9dc7a878bbf9280a835e.setContent(html_ace7dcaefc78d72a5fe341122c06091f);
+            
+        
+
+        circle_marker_03c394d2deb06322b7492a5f61074ffd.bindPopup(popup_4dbfab8599bd9dc7a878bbf9280a835e)
+        ;
+
+        
+    
+    
+            circle_marker_03c394d2deb06322b7492a5f61074ffd.bindTooltip(
+                `<div>
+                     Rajkot - Click for details
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_db9f3c0e29a8e7ce2ac8d653f6ca8923 = L.circleMarker(
+                [21.7645, 72.1519],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 2}
+            ).addTo(marker_cluster_e3ff39537c9f7780aed5ba85286dada7);
+        
+    
+        var popup_abdb63fd9178e0aa1930768ae7637a48 = L.popup({"maxWidth": 250});
+
+        
+            
+                var html_923979a7aa5e974ced9218570ce68b1c = $(`<div id="html_923979a7aa5e974ced9218570ce68b1c" style="width: 100.0%; height: 100.0%;">         <div style="width: 200px; font-family: Arial, sans-serif;">             <h4 style="margin-bottom: 5px; color: #2c3e50;">Bhavnagar Station</h4>             <hr style="margin: 5px 0; border: 0; border-top: 1px solid #eee;">             <p style="margin: 5px 0; font-size: 13px;"><b>Coordinates:</b> 21.76, 72.15</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Annual Rainfall:</b> 650 mm</p>             <p style="margin: 5px 0; font-size: 13px;"><b>Status:</b> <span style="color: #27ae60; font-weight: bold;">Active</span></p>         </div>         </div>`)[0];
+                popup_abdb63fd9178e0aa1930768ae7637a48.setContent(html_923979a7aa5e974ced9218570ce68b1c);
+            
+        
+
+        circle_marker_db9f3c0e29a8e7ce2ac8d653f6ca8923.bindPopup(popup_abdb63fd9178e0aa1930768ae7637a48)
+        ;
+
+        
+    
+    
+            circle_marker_db9f3c0e29a8e7ce2ac8d653f6ca8923.bindTooltip(
+                `<div>
+                     Bhavnagar - Click for details
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_e3ff39537c9f7780aed5ba85286dada7.addTo(map_5bef55da8b9535faf10479408e2f97cc);
+        
+    
+            var layer_control_b470c380c560ac9e84a191255c0cd5da_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_5ba5509fef73d1796edec0cfa84882ec,
+                },
+                overlays :  {
+                    "Rainfall Stations" : marker_cluster_e3ff39537c9f7780aed5ba85286dada7,
+                },
+            };
+            let layer_control_b470c380c560ac9e84a191255c0cd5da = L.control.layers(
+                layer_control_b470c380c560ac9e84a191255c0cd5da_layers.base_layers,
+                layer_control_b470c380c560ac9e84a191255c0cd5da_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_5bef55da8b9535faf10479408e2f97cc);
+
         
 </script>
 </html>
